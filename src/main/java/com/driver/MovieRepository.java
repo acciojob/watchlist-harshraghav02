@@ -87,7 +87,13 @@ public class MovieRepository {
     }
 
     public void deleteAllDirectors(){
-        movieHashMap = new HashMap<>();
+
+        for(List<Movie> movieList : directorMovieList.values()){
+            for(Movie movie : movieList){
+                movieHashMap.remove(movie.getName());
+            }
+        }
+
         directorMovieList = new HashMap<>();
         directorHashMap = new HashMap<>();
     }
