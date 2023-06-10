@@ -63,7 +63,11 @@ public class MovieRepository {
     }
 
     public List<String > findAllMovies(){
-       List<String > list = (List<String>) movieHashMap.keySet();
+       List<String > list = new ArrayList<>();
+
+       for(String movie : movieHashMap.keySet()){
+           list.add(movie);
+       }
        return list;
     }
 
